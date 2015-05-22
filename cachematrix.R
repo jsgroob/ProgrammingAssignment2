@@ -10,8 +10,12 @@ makeCacheMatrix <- function(x = matrix()) {
               m <<- NULL
        }
        get <- function() x
+       
+# setting inverse to top level environement
        set_inverse <- function(solve) m <<- solve
        get_inverse <- function() m
+
+#creating list to retrieve inverse from
        list(set = set, get = get,
             set_inverse = set_inverse,
             get_inverse = get_inverse)
